@@ -1,0 +1,34 @@
+ion-card{
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  ion-card-header{
+      height: 5%;
+      width: 90%;
+      align-content: center;
+  }
+
+  ion-card-title{
+      size: 10px;
+  }
+ .img1{
+    height: 50%;
+    width: 47.2%;
+    border-radius: 5px;
+    
+ }
+
+ .img2{
+    height: 30%;
+    width: 100%;
+    border-radius: 5px;
+    
+ }
+
+.button1{
+    margin: 0;
+    fill: clear;
+}

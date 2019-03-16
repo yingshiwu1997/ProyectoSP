@@ -1,0 +1,8 @@
+{
+  "name": "Proyecto",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

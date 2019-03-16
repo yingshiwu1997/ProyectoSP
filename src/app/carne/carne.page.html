@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" icon-right routerLink="/tabs/home">
+      <ion-icon name="arrow-back"></ion-icon>
+      Back
+    </ion-button>
+    <ion-title>Carnes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <mbsc-page>
+        <mbsc-card [options]="settings">
+            <img class="mbsc-img-thumbnail mbsc-pull-left" width="90" height="90" src="assets/img/3.jpg">
+            <mbsc-card-header>
+                <mbsc-card-title class="titulo">Pan Integral<mbsc-button flat icon="cart"></mbsc-button></mbsc-card-title>
+                
+            </mbsc-card-header>
+            <mbsc-card-content>
+              Q.20.00
+              <mbsc-form-group>
+                <mbsc-stepper [(ngModel)]="stepper1" min="1" max="15">
+                </mbsc-stepper>
+              </mbsc-form-group>
+            </mbsc-card-content>
+        </mbsc-card>
+    </mbsc-page>
+
+</ion-content>
