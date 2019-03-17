@@ -1,16 +1,29 @@
 ion-card-content{
     font-size: 10px;
-    padding: 3%;
+    padding: 0%;
+    width: 100%;
 }
 
 .img1{
-    height: 30%;
-    opacity: 0.7;
+    margin-top: 7%;
 }
 
 .img2{
-    height: 40%;
-    width: 45%;
+    height: 80%;
+    width: 80%;
     border-radius: 5px;
    
+}
+h2{
+    font-size: 15px;
+    color: #000;
+}
+
+.letra{
+    font-size: 20px;
+    color: #000;
+}
+
+ion-icon{
+    font-size: 250%;
 }

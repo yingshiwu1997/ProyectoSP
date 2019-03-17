@@ -1,32 +1,31 @@
-mbsc-card-title{
-    font-size: 15px;
+ion-card-content{
+    font-size: 10px;
+    padding: 0%;
+    width: 100%;
 }
-mbsc-card{
+
+.img1{
+    margin-top: 7%;
+    width: 100%;
+    height: 30%;
+}
+
+.img2{
+    height: 80%;
+    width: 80%;
     border-radius: 5px;
-}
-img{
-    border-radius: 5px;
-}
-mbsc-stepper{
-    background-color: #fff;
-    font-size: 12px;
-    
    
 }
-mbsc-form-group{
-    background-color: #fff; 
-    margin-left: -30px;
-    margin-bottom: -15px;
-    margin-top: 6px;
-}
-mbsc-button{
+h2{
     font-size: 15px;
-    margin: -17px;
+    color: #000;
 }
-mbsc-card-footer{
-    margin: 0%;
-    border-radius: 5px;
+
+.letra{
+    font-size: 20px;
+    color: #000;
 }
-mbsc-card-content{
-    margin-top: -30px; 
+
+ion-icon{
+    font-size: 250%;
 }

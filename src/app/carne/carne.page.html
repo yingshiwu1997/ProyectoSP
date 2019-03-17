@@ -1,12 +1,65 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-button fill="clear" icon-right routerLink="/tabs/home">
-      <ion-icon name="arrow-back"></ion-icon>
-      Back
-    </ion-button>
-    <ion-title>Carnes</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-</ion-content>
+    <img class="img1" src="assets/img/10.jpg">
+       <ion-card>
+           <ion-card-content>
+               <ion-grid>
+                   <ion-row>
+                       <ion-col>
+                           <div>
+                              <img class="img2" src="assets/img/9.jpg">
+                           </div>
+                       </ion-col>
+                       <ion-col>
+                           <div>
+                               <h2>Carne Lomito</h2>
+                              
+                           </div>
+                           <ion-row>
+                               <p>Q.35.00 libra</p>
+                           </ion-row>
+                           <ion-row>
+                               <ion-icon name="remove-circle-outline" (click)="decrement()"></ion-icon>
+                                   <h2 class="letra">{{cantidad}}</h2>
+                               <ion-icon name="add-circle-outline" (click)="increment()"></ion-icon>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               <ion-icon name="bookmark"></ion-icon>
+                           </ion-row>
+                       </ion-col>
+                   </ion-row>
+                   <ion-row></ion-row>
+               </ion-grid>
+           </ion-card-content>
+       </ion-card>
+   
+       <ion-card>
+               <ion-card-content>
+                   <ion-grid>
+                       <ion-row>
+                           <ion-col>
+                               <div>
+                                  <img class="img2" src="assets/img/7.jpg">
+                               </div>
+                           </ion-col>
+                           <ion-col>
+                               <div>
+                                   <h2>Pollo Importado</h2>
+                                  
+                               </div>
+                               <ion-row>
+                                   <p>Q.35.00 libra</p>
+                               </ion-row>
+                               <ion-row>
+                                   <ion-icon name="remove-circle-outline" (click)="decrement()"></ion-icon>
+                                       <h2 class="letra">{{cantidad}}</h2>
+                                   <ion-icon name="add-circle-outline" (click)="increment()"></ion-icon>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   <ion-icon name="bookmark"></ion-icon>
+                               </ion-row>
+                           </ion-col>
+                       </ion-row>
+                       <ion-row></ion-row>
+                   </ion-grid>
+               </ion-card-content>
+           </ion-card>
+   </ion-content>
+   
