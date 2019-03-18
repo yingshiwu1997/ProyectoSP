@@ -28,7 +28,10 @@
         "@ionic/angular": "^4.0.0",
         "@ionic/pro": "2.0.4",
         "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-4.6.0.tgz",
+        "chart.js": "^2.8.0",
         "core-js": "^2.5.4",
+        "ng2-charts": "^2.0.3",
+        "ng2-google-charts": "^4.0.0",
         "rxjs": "~6.3.3",
         "rxjs-compat": "^6.4.0",
         "zone.js": "~0.8.29"

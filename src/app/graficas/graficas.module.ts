@@ -1,10 +1,10 @@
 
-import { NgModule } from '@angular/core';
+import { NgModule, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
-import { IonicModule } from '@ionic/angular';
+import { ChartsModule } from 'ng2-charts';
+import { IonicModule, NavController } from '@ionic/angular';
 
 import { GraficasPage } from './graficas.page';
 
@@ -16,7 +16,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ 
+  imports: [
+    ChartsModule,
     CommonModule,
     FormsModule,
     IonicModule,
@@ -24,4 +25,10 @@ const routes: Routes = [
   ],
   declarations: [GraficasPage]
 })
-export class GraficasPageModule {}
+export class GraficasPageModule {
+ 
+  constructor(){
+
+  }
+ 
+}
