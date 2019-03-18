@@ -1,9 +1,14 @@
 <ion-content>
+  
   <img src="assets/img/8.jpg">
-    <ion-input placeholder=" Usuario" inputmode="text"></ion-input>
-    <ion-input placeholder=" Contraseña" type="password"></ion-input>
-    <ion-button color="warning">Aceptar</ion-button>
-    <div>
-      <a href="#" routerLink="/registrar">¿No tienes una cuenta aún?</a>
-    </div>
+
+  <ion-input placeholder=" Usuario" type="text" [(ngModel)]="user.email"></ion-input>
+  
+  <ion-input placeholder=" Contraseña" type="password" [(ngModel)]="user.password"></ion-input>
+  
+  <ion-button color="warning" (click)="login(user)">Aceptar</ion-button>
+  <div>
+    <a href="#" routerLink="/registrar">¿No tienes una cuenta aún?</a>
+  </div>
 </ion-content>
+ 
