@@ -11,21 +11,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from "angularfire2/auth";
-
-import { FIREBASE_CONFIG } from './app.firebase.config';
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [ 
     MbscModule, 
     FormsModule, 
-    BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule
-  ],
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
