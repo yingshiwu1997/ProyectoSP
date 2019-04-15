@@ -1,9 +1,9 @@
 <ion-content>
   <img src="assets/img/8.jpg">
-    <ion-input placeholder=" Nombre" inputmode="text"></ion-input>
-    <ion-input placeholder=" Usuario" inputmode="text"></ion-input>
-    <ion-input placeholder=" Contraseña" type="password"></ion-input>
-    <ion-button color="warning">Aceptar</ion-button>
+    <ion-input placeholder=" Nombre" type="text" [(ngModel)]="user.name"></ion-input>
+    <ion-input placeholder=" Email" type="text" [(ngModel)]="user.email"></ion-input>
+    <ion-input placeholder=" Contraseña" type="password" [(ngModel)]="user.password"></ion-input>
+    <ion-button color="warning" (click)="register(user)">Aceptar</ion-button>
     <div>
       <a href="#" routerLink="/iniciar">Regresar</a>
     </div>
