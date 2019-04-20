@@ -18,9 +18,9 @@
                             <p>Q.35.00 libra</p>
                         </ion-row>
                         <ion-row>
-                            <ion-icon name="remove-circle-outline" (click)="decrement()"></ion-icon>
-                                <h2 class="letra">{{cantidad}}</h2>
-                            <ion-icon name="add-circle-outline" (click)="increment()"></ion-icon>
+                            <ion-icon name="remove-circle-outline" (click)="decrement(0)"></ion-icon>
+                                <h2 class="letra">{{cantidad[0]}}</h2>
+                            <ion-icon name="add-circle-outline" (click)="increment(0)"></ion-icon>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <ion-icon name="bookmark"></ion-icon>
                         </ion-row>
@@ -49,9 +49,9 @@
                                 <p>Q.35.00 libra</p>
                             </ion-row>
                             <ion-row>
-                                <ion-icon name="remove-circle-outline" (click)="decrement()"></ion-icon>
-                                    <h2 class="letra">{{cantidad}}</h2>
-                                <ion-icon name="add-circle-outline" (click)="increment()"></ion-icon>
+                                <ion-icon name="remove-circle-outline" (click)="decrement(1)"></ion-icon>
+                                    <h2 class="letra">{{cantidad[1]}}</h2>
+                                <ion-icon name="add-circle-outline" (click)="increment(1)"></ion-icon>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <ion-icon name="bookmark"></ion-icon>
                             </ion-row>

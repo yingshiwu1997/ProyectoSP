@@ -57,6 +57,9 @@ export class RegistrarPage implements OnInit {
         case "auth/weak-password":
         message = "La contraseña tiene que tener mas de 8 caracteres";
         break;
+        case "auth/email-already-in-use":
+        message = "Ya existe una cuenta con este email";
+        break;
         default:
         message = "Ocurrio un error al registrar, intente de nuevo";
       }

@@ -8,25 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  private cantidad = 0;
+  private cantidad : number[] = [0, 0];
   private max = 100;
+  private indice = 0;
   constructor() { }
 
   ngOnInit() {
   }
-  private increment () {
-    if(this.cantidad < this.max){
-      this.cantidad++;
+  private increment (index) {
+    if(this.cantidad[index] < this.max){
+      this.cantidad[index]++;
     }
   }
   
-  private decrement () {
-    if(this.cantidad > 0){
-      this.cantidad--;
+  private decrement (index) {
+    if(this.cantidad[index] > 0){
+      this.cantidad[index]--;
     }
-  }
-  private guardar(){
-    
   }
 
 }
