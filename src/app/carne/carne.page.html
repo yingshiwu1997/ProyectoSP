@@ -22,7 +22,7 @@
                                 <h2 class = "letra">{{producto.cantidad}}</h2>
                                 <ion-icon name="add-circle-outline" (click)="increment(i)"></ion-icon>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                               <ion-icon name="bookmark"></ion-icon>
+                               <ion-icon [name]="producto.icon"  (click)="add(i)"></ion-icon>
                             </ion-row>
                         </ion-col>
                     </ion-row>

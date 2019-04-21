@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Producto } from "../../models/producto";
 
 @Component({
   selector: 'app-menu',
@@ -8,23 +9,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  private cantidad : number[] = [0, 0];
+  private productos = [];
+  private uid = this.afAuth.auth.currentUser.uid;
+  private productos_carrito;
   private max = 100;
-  private indice = 0;
-  constructor() { }
+  constructor(private afStore:AngularFirestore, private afAuth:AngularFireAuth) { }
 
   ngOnInit() {
+    this.productos_carrito = this.getKartList().valueChanges();
+    this.productos_carrito.forEach(snap=>{
+      this.productos = [];
+      snap.forEach(producto => {
+        this.productos.push({
+          Nombre: producto.Nombre,
+          Categoria: producto.Categoria,
+          Precio: producto.Precio,
+          img: producto.img,
+          cantidad: producto.cantidad
+        });
+      });
+    });
   }
+
   private increment (index) {
-    if(this.cantidad[index] < this.max){
-      this.cantidad[index]++;
+    if(this.productos[index].cantidad < this.max){
+      this.productos[index].cantidad++;
     }
   }
   
   private decrement (index) {
-    if(this.cantidad[index] > 0){
-      this.cantidad[index]--;
+    if(this.productos[index].cantidad > 0){
+      this.productos[index].cantidad--;
     }
+  }
+
+  private remove(index){
+    this.afStore.collection("usuario")
+  }
+
+  private getKartList() : AngularFirestoreCollection<Producto>{
+    return this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito");
   }
 
 }
