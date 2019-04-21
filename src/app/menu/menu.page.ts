@@ -16,16 +16,19 @@ export class MenuPage implements OnInit {
   constructor(private afStore:AngularFirestore, private afAuth:AngularFireAuth) { }
 
   ngOnInit() {
-    this.productos_carrito = this.getKartList().valueChanges();
+    this.productos_carrito = this.getKartList().snapshotChanges();
     this.productos_carrito.forEach(snap=>{
       this.productos = [];
       snap.forEach(producto => {
+        var data = producto.payload.doc.data();
+        var id = producto.payload.doc.id;
         this.productos.push({
-          Nombre: producto.Nombre,
-          Categoria: producto.Categoria,
-          Precio: producto.Precio,
-          img: producto.img,
-          cantidad: producto.cantidad
+          id: id,
+          Nombre: data.Nombre,
+          Categoria: data.Categoria,
+          Precio: data.Precio,
+          img: data.img,
+          cantidad: data.cantidad
         });
       });
     });
@@ -44,7 +47,8 @@ export class MenuPage implements OnInit {
   }
 
   private remove(index){
-    this.afStore.collection("usuario")
+    this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(this.productos[index].id).delete()
+    .catch(error => console.error(error));
   }
 
   private getKartList() : AngularFirestoreCollection<Producto>{

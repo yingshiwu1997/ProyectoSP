@@ -14,25 +14,32 @@ export class CarnePage implements OnInit {
   private productos_carrito;
   private coleccion_productos;
   private max = 100;
+  private control = true;
   constructor(private afStore : AngularFirestore, private afAuth : AngularFireAuth) { }
 
   ngOnInit() {
 
-    this.coleccion_productos = this.getProductsList().valueChanges();
-    this.productos_carrito = this.getKartList().valueChanges();
+    this.coleccion_productos = this.getProductsList().snapshotChanges();
+    this.productos_carrito = this.getKartList().snapshotChanges();
 
     this.coleccion_productos.forEach(snap => {
       this.productos = [];
       snap.forEach(producto => {
+        var id = producto.payload.doc.id;
+        var data = producto.payload.doc.data();
         var prod = {
-          producto: producto,
+          id: id,
+          img: data.img,
+          Nombre: data.Nombre,
+          Precio: data.Precio,
+          Categoria: data.Categoria,
           cantidad: 0,
           added: false,
           icon: "cart"
         };
         this.productos_carrito.forEach(snapC => {
           snapC.forEach(prodC =>{
-            if(prodC.Nombre === producto.Nombre){
+            if(prodC.payload.doc.id == id){
               prod.added = true;
               prod.icon = "checkbox";
             }
@@ -41,6 +48,24 @@ export class CarnePage implements OnInit {
         this.productos.push(prod);
       });
     });
+
+    this.productos_carrito.forEach(snapC => {
+      if(this.control)
+        this.control = false;
+      else{
+        this.productos.forEach(producto => {
+          producto.added = false;
+          producto.icon = "cart";
+          snapC.forEach(prodC =>{
+            if(prodC.payload.doc.id == producto.id){
+              producto.added = true;
+              producto.icon = "checkbox";
+            }
+          });
+        });
+      }
+    });
+
   }
 
   private increment (index) {
@@ -56,22 +81,18 @@ export class CarnePage implements OnInit {
   }
 
   private add(index){
-    if(this.productos[index].added == false){
-      var producto = this.productos[index].producto;
-      var cantidad = this.productos[index].cantidad;
-      if(cantidad == 0){
-        cantidad = 1
+    var producto = this.productos[index];
+    if(producto.added == false){
+      if(producto.cantidad == 0){
+        producto.cantidad = 1
         this.productos[index].cantidad = 1;
       }
-      this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").add({
+      this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(producto.id).set({
         Categoria: producto.Categoria,
         Nombre: producto.Nombre,
         Precio: producto.Precio,
         img: producto.img,
-        cantidad: cantidad
-      }).then(()=>{
-        this.productos[index].added = true;
-        this.productos[index].icon = "checkbox";
+        cantidad: producto.cantidad
       });
     }
   }
