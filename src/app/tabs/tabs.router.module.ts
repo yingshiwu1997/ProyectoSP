@@ -17,6 +17,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'comprar',
+        children: [
+          {
+            path: '',
+            loadChildren: '../comprar/comprar.module#ComprarPageModule'
+          }
+        ]
+      },
+      {
         path: 'home',
         children: [
           {

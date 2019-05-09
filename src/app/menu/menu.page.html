@@ -1,5 +1,14 @@
 <ion-content>
  <img class="img1" src="assets/img/6.jpg">
+ <div *ngIf="productos.length > 0; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock><button routerLink="/tabs/comprar"><p>Comprar</p></button></ng-template>
+    <ng-template #elseBlock>
+        <div class="row row-center">
+            <div class="col col-center">
+                    <h2>El carrito esta vacio</h2>
+            </div>
+        </div>
+    </ng-template>
  <ion-card *ngFor="let producto of productos; let i = index">
     <ion-card-content>
         <ion-grid>

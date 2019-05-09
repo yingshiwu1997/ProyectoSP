@@ -36,13 +36,17 @@ export class MenuPage implements OnInit {
 
   private increment (index) {
     if(this.productos[index].cantidad < this.max){
-      this.productos[index].cantidad++;
+      this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(this.productos[index].id).update({
+        cantidad: this.productos[index].cantidad + 1
+      });
     }
   }
   
   private decrement (index) {
     if(this.productos[index].cantidad > 0){
-      this.productos[index].cantidad--;
+      this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(this.productos[index].id).update({
+        cantidad: this.productos[index].cantidad - 1
+      });
     }
   }
 

@@ -56,6 +56,7 @@ export class CarnePage implements OnInit {
         this.productos.forEach(producto => {
           producto.added = false;
           producto.icon = "cart";
+          producto.cantidad = 0;
           snapC.forEach(prodC =>{
             if(prodC.payload.doc.id == producto.id){
               producto.added = true;
@@ -85,7 +86,6 @@ export class CarnePage implements OnInit {
     if(producto.added == false){
       if(producto.cantidad == 0){
         producto.cantidad = 1
-        this.productos[index].cantidad = 1;
       }
       this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(producto.id).set({
         Categoria: producto.Categoria,
