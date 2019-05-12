@@ -1,12 +1,15 @@
-<ion-content padding>
+<ion-content>
     <img class="img1" src="assets/img/6.jpg">
+    <button>Aceptar</button>
     <ion-card>
-      <p>Fecha</p>
-      <p>Total: {{total}}</p>
-      <p>Cantidad: {{cantidad}}</p>
-      <p>Metodo de pago</p>
-      <p>Nombre</p>
-      <p>Nit</p>
-      <p>Tiempo Aprox</p>
+      <ion-card-content>
+        <p>Fecha</p>
+        <p>Total: {{total}}</p>
+        <p>Cantidad: {{cantidad}}</p>
+        <input type="text" id="txtSearch" placeholder="Nombre" spellcheck="false"/>
+        <input type="text" id="txtSearch" placeholder="Nit" spellcheck="false"/>
+        <p>Hora aprox. a recoger</p>
+        <input type="time" id="txtSearch" placeholder="Hora" spellcheck="false"/>
+      </ion-card-content>
     </ion-card>
 </ion-content>
