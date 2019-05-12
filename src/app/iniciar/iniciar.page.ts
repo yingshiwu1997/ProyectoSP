@@ -21,9 +21,7 @@ export class IniciarPage implements OnInit {
     this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password)
     .then(
       result => {
-        console.log(result);
-        console.log(this.afAuth.auth.currentUser.email);
-        this.navCtrl.navigateForward('/tabs');
+        this.navCtrl.navigateRoot('/tabs');
       } 
     )
     .catch(err =>{
