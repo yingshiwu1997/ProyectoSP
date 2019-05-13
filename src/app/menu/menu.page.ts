@@ -43,7 +43,7 @@ export class MenuPage implements OnInit {
   }
   
   private decrement (index) {
-    if(this.productos[index].cantidad > 0){
+    if(this.productos[index].cantidad > 1){
       this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(this.productos[index].id).update({
         cantidad: this.productos[index].cantidad - 1
       });

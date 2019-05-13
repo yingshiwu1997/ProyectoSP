@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth'
 import { NavController, AlertController } from '@ionic/angular';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
  
 @Component({
   selector: 'app-iniciar',
@@ -12,7 +13,7 @@ export class IniciarPage implements OnInit {
 
   user = {} as User;
 
-  constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public alertCtrl: AlertController) { }
+  constructor(private nativestorage : NativeStorage, private afAuth: AngularFireAuth, public navCtrl: NavController, public alertCtrl: AlertController) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,8 @@ export class IniciarPage implements OnInit {
     this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password)
     .then(
       result => {
+        //this.nativestorage.setItem('userInfo', {email: this.user.email, password: this.user.password})
+        //.then(()=>this.nativestorage.getItem('userInfo').then(data => {console.log(data.email); console.log(data.password)}));
         this.navCtrl.navigateRoot('/tabs');
       } 
     )

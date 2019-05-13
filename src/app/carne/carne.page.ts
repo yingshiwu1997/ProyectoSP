@@ -40,6 +40,7 @@ export class CarnePage implements OnInit {
         this.productos_carrito.forEach(snapC => {
           snapC.forEach(prodC =>{
             if(prodC.payload.doc.id == id){
+              prod.cantidad = prodC.payload.doc.data().cantidad;
               prod.added = true;
               prod.icon = "checkbox";
             }
@@ -59,6 +60,7 @@ export class CarnePage implements OnInit {
           producto.cantidad = 0;
           snapC.forEach(prodC =>{
             if(prodC.payload.doc.id == producto.id){
+              producto.cantidad = prodC.payload.doc.data().cantidad;
               producto.added = true;
               producto.icon = "checkbox";
             }
@@ -76,7 +78,7 @@ export class CarnePage implements OnInit {
   }
   
   private decrement (index) {
-    if(this.productos[index].cantidad > 0){
+    if(this.productos[index].cantidad > 1){
       this.productos[index].cantidad--;
     }
   }

@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+
 import { FIREBASE_CONFIG } from './app.firebase.config';
 
 @NgModule({
@@ -31,6 +33,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
   providers: [
     StatusBar,
     SplashScreen,
+    NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
