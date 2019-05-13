@@ -1,15 +1,15 @@
 <ion-content>
     <img class="img1" src="assets/img/6.jpg">
-    <button>Aceptar</button>
+    <button (click)="comprar()">Aceptar</button>
     <ion-card>
       <ion-card-content>
         <p>Fecha</p>
         <p>Total: {{total}}</p>
         <p>Cantidad: {{cantidad}}</p>
-        <input type="text" id="txtSearch" placeholder="Nombre" spellcheck="false"/>
-        <input type="text" id="txtSearch" placeholder="Nit" spellcheck="false"/>
+        <input type="text" id="txtSearch" placeholder="Nombre" spellcheck="false" [(ngModel)]="user.name"/>
+        <input type="text" id="txtSearch" placeholder="Nit" spellcheck="false" [(ngModel)]="user.nit"/>
         <p>Hora aprox. a recoger</p>
-        <input type="time" id="txtSearch" placeholder="Hora" spellcheck="false"/>
+        <input type="time" id="txtSearch" placeholder="Hora" spellcheck="false" [(ngModel)]="user.time"/>
       </ion-card-content>
     </ion-card>
 </ion-content>
