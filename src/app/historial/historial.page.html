@@ -1,13 +1,23 @@
 <ion-content>
   <img class="img1" src="assets/img/11.jpg">
-  <ion-card>
+  <div *ngIf="compras.length == 0; then thenBlock"></div>
+    <ng-template #thenBlock>
+      <div class="row row-center">
+        <div class="col col-center">
+                <h2>No ha realizado compras</h2>
+        </div>
+    </div>
+    </ng-template>
+  
+  <ion-card *ngFor="let compra of compras; let i = index">
       <ion-grid>
         <ion-row>
-          <p>15/02/2019</p>
+          <p>{{compra.Fecha}}</p>
         </ion-row>
         <ion-row>
           <ion-col>
-              <p>Total: Q250.00</p>
+              <p>Total: Q{{compra.Total}}
+              </p>
           </ion-col>
           <ion-col>
             <p>Pago: Efectivo</p>

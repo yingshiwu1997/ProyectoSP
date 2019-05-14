@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/fire
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Producto } from "../../models/producto";
 import { User } from '../../models/user';
-import { async } from 'q';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-comprar',
@@ -45,7 +45,8 @@ export class ComprarPage implements OnInit {
       Total: this.total,
       HoraRecogida: this.user.time,
       Nombre: this.user.name,
-      NIT: this.user.nit
+      NIT: this.user.nit,
+      Fecha: firebase.firestore.FieldValue.serverTimestamp() 
     }).then(result => {
       this.compra_actual = result.id;
       this.productos.forEach(producto => {

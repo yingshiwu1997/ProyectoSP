@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
-import { AngularFireAuth } from 'angularfire2/auth'
+import { AngularFireAuth } from '@angular/fire/auth';
 import { NavController, AlertController } from '@ionic/angular';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
  
@@ -31,9 +31,6 @@ export class IniciarPage implements OnInit {
       console.log(err.code);
       this.showLoginError(err.code);
     });
-    // this.afAuth.auth.signOut().then(
-    //   ()=>console.log(this.afAuth.auth.currentUser)
-    // );
   }
 
   async showLoginError(error){
