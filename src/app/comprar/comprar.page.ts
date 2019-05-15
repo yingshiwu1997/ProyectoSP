@@ -4,6 +4,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { Producto } from "../../models/producto";
 import { User } from '../../models/user';
 import * as firebase from 'firebase';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-comprar',
@@ -18,7 +19,7 @@ export class ComprarPage implements OnInit {
   public productos = [];
   public compra_actual;
   user = {} as User;
-  constructor(private afStore:AngularFirestore, private afAuth:AngularFireAuth) { }
+  constructor(private afStore:AngularFirestore, private afAuth:AngularFireAuth, private navCtrl : NavController) { }
 
   ngOnInit() {
     this.productos_carrito = this.getKartList().snapshotChanges();
@@ -53,6 +54,7 @@ export class ComprarPage implements OnInit {
         this.afStore.collection("Usuarios").doc(this.uid).collection("Compras").doc(result.id).collection("Productos").doc(producto.id).set(producto.prod);
         this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(producto.id).delete();
       });
+      this.navCtrl.navigateRoot('/tabs/historial');
     })
     .catch(error => {
       console.log(error);
