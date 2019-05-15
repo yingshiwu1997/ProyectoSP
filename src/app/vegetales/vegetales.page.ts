@@ -101,11 +101,11 @@ export class VegetalesPage implements OnInit {
   }
 
   private getProductsList() : AngularFirestoreCollection<Producto> {
-    return this.afStore.collection('Productos', ref => ref.where("Categoria", "==", "Vegetales"));
+    return this.afStore.collection('Productos', ref => ref.where("Categoria", "==", "Vegetal"));
   }
 
   private getKartList() : AngularFirestoreCollection<Producto> {
-    return this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito", ref => ref.where("Categoria", "==", "Vegetales"));
+    return this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito", ref => ref.where("Categoria", "==", "Vegetal"));
   }
 
 }

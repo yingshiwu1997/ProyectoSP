@@ -30,7 +30,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../pan/pan.module#PanPageModule'
+            loadChildren: '../vegetales/vegetales.module#VegetalesPageModule'
           }
         ]
       },
@@ -39,7 +39,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../pan/pan.module#PanPageModule'
+            loadChildren: '../lacteos/lacteos.module#LacteosPageModule'
           }
         ]
       },
@@ -48,7 +48,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../pan/pan.module#PanPageModule'
+            loadChildren: '../dulces/dulces.module#DulcesPageModule'
           }
         ]
       },

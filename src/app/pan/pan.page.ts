@@ -19,7 +19,7 @@ export class PanPage implements OnInit {
   constructor(private afStore : AngularFirestore, private afAuth : AngularFireAuth) { }
 
   ngOnInit() {
-
+    
     this.coleccion_productos = this.getProductsList().snapshotChanges();
     this.productos_carrito = this.getKartList().snapshotChanges();
 
