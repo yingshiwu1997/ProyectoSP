@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Producto } from "../../models/producto";
 
 @Component({
@@ -101,10 +101,10 @@ export class DulcesPage implements OnInit {
   }
 
   private getProductsList() : AngularFirestoreCollection<Producto> {
-    return this.afStore.collection('Productos', ref => ref.where("Categoria", "==", "Carne"));
+    return this.afStore.collection('Productos', ref => ref.where("Categoria", "==", "Dulces"));
   }
 
   private getKartList() : AngularFirestoreCollection<Producto> {
-    return this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito", ref => ref.where("Categoria", "==", "Carne"));
+    return this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito", ref => ref.where("Categoria", "==", "Dulces"));
   }
 }
