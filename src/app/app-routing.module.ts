@@ -11,7 +11,9 @@ const routes: Routes = [
   { path: 'iniciar', loadChildren: './iniciar/iniciar.module#IniciarPageModule' },
   { path: 'registrar', loadChildren: './registrar/registrar.module#RegistrarPageModule' },
   { path: 'comprar', loadChildren: './comprar/comprar.module#ComprarPageModule' },
-  { path: 'pan', loadChildren: './pan/pan.module#PanPageModule' },  { path: 'vegetales', loadChildren: './vegetales/vegetales.module#VegetalesPageModule' }
+  { path: 'pan', loadChildren: './pan/pan.module#PanPageModule' },  { path: 'vegetales', loadChildren: './vegetales/vegetales.module#VegetalesPageModule' },
+  { path: 'lacteos', loadChildren: './lacteos/lacteos.module#LacteosPageModule' },
+  { path: 'dulces', loadChildren: './dulces/dulces.module#DulcesPageModule' }
 
 
   
