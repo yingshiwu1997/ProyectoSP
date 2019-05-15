@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'graficas', loadChildren: './graficas/graficas.module#GraficasPageModule' },
   { path: 'historial', loadChildren: './historial/historial.module#HistorialPageModule' },
   { path: 'iniciar', loadChildren: './iniciar/iniciar.module#IniciarPageModule' },
-  { path: 'registrar', loadChildren: './registrar/registrar.module#RegistrarPageModule' },  { path: 'comprar', loadChildren: './comprar/comprar.module#ComprarPageModule' }
+  { path: 'registrar', loadChildren: './registrar/registrar.module#RegistrarPageModule' },  { path: 'comprar', loadChildren: './comprar/comprar.module#ComprarPageModule' },
+  { path: 'pan', loadChildren: './pan/pan.module#PanPageModule' }
 
   
 ];

@@ -4,11 +4,12 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Producto } from "../../models/producto";
 
 @Component({
-  selector: 'app-carne',
-  templateUrl: './carne.page.html',
-  styleUrls: ['./carne.page.scss'],
+  selector: 'app-pan',
+  templateUrl: './pan.page.html',
+  styleUrls: ['./pan.page.scss'],
 })
-export class CarnePage implements OnInit {
+export class PanPage implements OnInit {
+
   private productos = [];
   private uid = this.afAuth.auth.currentUser.uid;
   private productos_carrito;
@@ -100,11 +101,11 @@ export class CarnePage implements OnInit {
   }
 
   private getProductsList() : AngularFirestoreCollection<Producto> {
-    return this.afStore.collection('Productos', ref => ref.where("Categoria", "==", "Carne"));
+    return this.afStore.collection('Productos', ref => ref.where("Categoria", "==", "Pan"));
   }
 
   private getKartList() : AngularFirestoreCollection<Producto> {
-    return this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito", ref => ref.where("Categoria", "==", "Carne"));
+    return this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito", ref => ref.where("Categoria", "==", "Pan"));
   }
 
 }

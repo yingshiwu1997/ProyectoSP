@@ -17,6 +17,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'pan',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pan/pan.module#PanPageModule'
+          }
+        ]
+      },
+      {
         path: 'comprar',
         children: [
           {
