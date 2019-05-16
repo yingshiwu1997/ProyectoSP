@@ -17,6 +17,11 @@ export class CarnePage implements OnInit {
   private control = true;
   constructor(private afStore : AngularFirestore, private afAuth : AngularFireAuth) { }
 
+  buscar(event){
+    const texto = event.target.value;
+    console.log(texto);
+  }
+
   ngOnInit() {
 
     this.coleccion_productos = this.getProductsList().snapshotChanges();
