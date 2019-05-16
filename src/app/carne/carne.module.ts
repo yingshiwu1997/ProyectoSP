@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { CarnePage } from './carne.page';
+import { PipesModule } from '../pipes/pipes.module';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [  
+  imports: [ 
+    PipesModule,
     CommonModule,
     FormsModule,
     IonicModule,

@@ -15,11 +15,12 @@ export class CarnePage implements OnInit {
   private coleccion_productos;
   private max = 100;
   private control = true;
+  textoBuscar = '';
   constructor(private afStore : AngularFirestore, private afAuth : AngularFireAuth) { }
 
   buscar(event){
     const texto = event.target.value;
-    console.log(texto);
+    this.textoBuscar = texto;
   }
 
   ngOnInit() {
