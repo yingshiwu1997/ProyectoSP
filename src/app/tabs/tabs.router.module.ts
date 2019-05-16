@@ -26,6 +26,33 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'vegetales',
+        children: [
+          {
+            path: '',
+            loadChildren: '../vegetales/vegetales.module#VegetalesPageModule'
+          }
+        ]
+      },
+      {
+        path: 'lacteos',
+        children: [
+          {
+            path: '',
+            loadChildren: '../lacteos/lacteos.module#LacteosPageModule'
+          }
+        ]
+      },
+      {
+        path: 'dulces',
+        children: [
+          {
+            path: '',
+            loadChildren: '../dulces/dulces.module#DulcesPageModule'
+          }
+        ]
+      },
+      {
         path: 'comprar',
         children: [
           {

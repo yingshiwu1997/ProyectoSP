@@ -9,8 +9,12 @@ const routes: Routes = [
   { path: 'graficas', loadChildren: './graficas/graficas.module#GraficasPageModule' },
   { path: 'historial', loadChildren: './historial/historial.module#HistorialPageModule' },
   { path: 'iniciar', loadChildren: './iniciar/iniciar.module#IniciarPageModule' },
-  { path: 'registrar', loadChildren: './registrar/registrar.module#RegistrarPageModule' },  { path: 'comprar', loadChildren: './comprar/comprar.module#ComprarPageModule' },
-  { path: 'pan', loadChildren: './pan/pan.module#PanPageModule' }
+  { path: 'registrar', loadChildren: './registrar/registrar.module#RegistrarPageModule' },
+  { path: 'comprar', loadChildren: './comprar/comprar.module#ComprarPageModule' },
+  { path: 'pan', loadChildren: './pan/pan.module#PanPageModule' },  { path: 'vegetales', loadChildren: './vegetales/vegetales.module#VegetalesPageModule' },
+  { path: 'lacteos', loadChildren: './lacteos/lacteos.module#LacteosPageModule' },
+  { path: 'dulces', loadChildren: './dulces/dulces.module#DulcesPageModule' }
+
 
   
 ];
