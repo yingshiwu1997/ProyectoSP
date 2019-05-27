@@ -1,14 +1,27 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(../assets/fonts/Poppins-Regular.otf);
+    }
+body{
+    font-family: 'Poppins';
+}
 img{
-  height: 50%;
+  height: 38%;
   width: auto;
   margin: auto;
+  margin-top: 50px;
   display: block;
   padding: 5%;
 }
 
+a:link 
+{ 
+text-decoration:none; 
+} 
+
 ion-input{
-    background-color: #fff082;
-    border-color: #000;
+    background-color: rgb(255, 241, 43);
+    border-color: rgb(255, 241, 43);
     border-radius: 5px;
     width: 80%;
     margin-left: 10%;
@@ -20,7 +33,11 @@ ion-button{
     width: 40%;
     margin-bottom: 10%;
     border-radius: 10px;
+    background-color: #f88d13;
 }
 ion-content{
     text-align: center;
+}
+p{
+    color: #6099ff;
 }

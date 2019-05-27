@@ -12,7 +12,7 @@
   <ion-card *ngFor="let compra of compras; let i = index">
       <ion-grid>
         <ion-row>
-          <p>{{compra.Fecha}}</p>
+          <p>{{compra.Fecha | date: short}}</p>
         </ion-row>
         <ion-row>
           <ion-col>
