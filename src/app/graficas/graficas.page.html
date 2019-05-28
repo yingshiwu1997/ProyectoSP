@@ -1,5 +1,27 @@
 <ion-content>
+    <br><br><br><br>
+
+    <ion-list>
+            <ion-item>
+                <ion-label>Opciones</ion-label>
+                <ion-select>
+                    <ion-select-option value="f">Por productos</ion-select-option>
+                    <ion-select-option value="m">Por cantidad</ion-select-option>
+                    <ion-select-option value="m">Por mes</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+
     <ion-card>
-      
+        <div style="display: block">
+            <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
     </ion-card>
 </ion-content>

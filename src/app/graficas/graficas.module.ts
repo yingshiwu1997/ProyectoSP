@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { ChartsModule } from 'ng2-charts';
 import { IonicModule, NavController } from '@ionic/angular';
-
 import { GraficasPage } from './graficas.page';
 
 const routes: Routes = [
