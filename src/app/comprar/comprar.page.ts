@@ -43,14 +43,15 @@ export class ComprarPage implements OnInit {
 
   public comprar(){
     this.afStore.collection("Usuarios").doc(this.uid).collection("Compras").add({
+      Fecha: firebase.firestore.FieldValue.serverTimestamp(),
       Entregado: false,
       Total: this.total,
       HoraRecogida: this.user.time,
       Nombre: this.user.name,
-      NIT: this.user.nit,
-      Fecha: firebase.firestore.FieldValue.serverTimestamp() 
+      NIT: this.user.nit, 
+      Codigo: String(Math.floor(Math.random() * 8888888) + 1111111)
     }).then(result => {
-      this.compra_actual = result.id;
+      this.compra_actual = result.id; 
       this.productos.forEach(producto => {
         this.afStore.collection("Usuarios").doc(this.uid).collection("Compras").doc(result.id).collection("Productos").doc(producto.id).set(producto.prod);
         this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(producto.id).delete();

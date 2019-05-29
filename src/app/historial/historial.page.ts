@@ -20,7 +20,9 @@ export class HistorialPage implements OnInit {
         var data = compra.payload.doc.data();
         this.compras.push({
           Fecha: data.Fecha.toDate(),
-          Total: data.Total
+          Total: data.Total,
+          Entregado: data.Entregado ? "Entregado": "Pendiente",
+          Codigo: data.Codigo
         });
       });
     });

@@ -84,7 +84,7 @@ export class GraficasPage implements OnInit {
           color = '#b510ce';
           break;
       }
-      this.categorias[categoria]["barChartColors"] = [{ backgroundColor: [color]}];
+      this.categorias[categoria]["barChartColors"] = [{ backgroundColor: [color, color, color, color]}];
     }
     this.afStore.collection("Usuarios").doc(this.uid).collection("Compras").get().forEach(snap => {
       this.ready = snap.size;
