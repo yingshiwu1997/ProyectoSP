@@ -32,7 +32,8 @@ export class ComprarPage implements OnInit {
           prod:{
             Cantidad: data.cantidad,
             Nombre: data.Nombre,
-            Precio: data.Precio 
+            Precio: data.Precio,
+            Categoria: data.Categoria
           }
         });
         this.cantidad++;

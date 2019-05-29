@@ -12,16 +12,20 @@
             </ion-item>
         </ion-list>
 
-    <ion-card>
+    <div *ngIf="ready <= 0; then thenBlock"></div>
+    <ng-template #thenBlock><ion-card *ngFor="let key of catkeys">
+        
         <div style="display: block">
             <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
+              [datasets]="categorias[key].barChartData"
+              [labels]="categorias[key].barChartLabels"
+              [options]="categorias[key].barChartOptions"
               [plugins]="barChartPlugins"
-              [legend]="barChartLegend"
-              [chartType]="barChartType">
+              [legend]="categorias[key].barChartLegend"
+              [chartType]="categorias[key].barChartType"
+              [colors]="categorias[key].barChartColors">
             </canvas>
           </div>
     </ion-card>
+    </ng-template>
 </ion-content>
