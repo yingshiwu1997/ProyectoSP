@@ -42,6 +42,7 @@ export class ComprarPage implements OnInit {
   }
 
   public comprar(){
+    var cod = String(Math.floor(Math.random() * 8888888) + 1111111);
     this.afStore.collection("Usuarios").doc(this.uid).collection("Compras").add({
       Fecha: firebase.firestore.FieldValue.serverTimestamp(),
       Entregado: false,
@@ -49,7 +50,7 @@ export class ComprarPage implements OnInit {
       HoraRecogida: this.user.time,
       Nombre: this.user.name,
       NIT: this.user.nit, 
-      Codigo: String(Math.floor(Math.random() * 8888888) + 1111111)
+      Codigo: cod
     }).then(result => {
       this.compra_actual = result.id; 
       this.productos.forEach(producto => {

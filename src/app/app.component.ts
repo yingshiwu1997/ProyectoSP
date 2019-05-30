@@ -24,7 +24,7 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      /* this.nativestorage.getItem('userInfo').then(data => {
+      /*this.nativestorage.getItem('userInfo').then(data => {
         if(data)
         {
           this.afauth.auth.signInWithEmailAndPassword(data.email, data.password).then(() => {
@@ -44,7 +44,12 @@ export class AppComponent {
           this.statusBar.styleDefault();
           this.splashScreen.hide();
         }
-      }); */
+      })
+      .catch(()=>{
+        this.router.navigateByUrl('iniciar');
+        this.statusBar.styleDefault();
+        this.splashScreen.hide();
+      });*/
       this.router.navigateByUrl('iniciar');
       this.statusBar.styleDefault();
       this.splashScreen.hide();
