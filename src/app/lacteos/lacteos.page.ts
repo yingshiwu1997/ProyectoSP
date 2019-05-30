@@ -18,6 +18,12 @@ export class LacteosPage implements OnInit {
   private control = true;
   constructor(private afStore : AngularFirestore, private afAuth : AngularFireAuth) { }
 
+  textoBuscar = '';
+  buscar(event){
+    const texto = event.target.value;
+    this.textoBuscar = texto;
+  }
+
   ngOnInit() {
 
     this.coleccion_productos = this.getProductsList().snapshotChanges();

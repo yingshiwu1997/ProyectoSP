@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { LacteosPage } from './lacteos.page';
-
+import { PipesModule } from '../pipes/pipes.module';
 const routes: Routes = [
   {
     path: '',
@@ -16,6 +16,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    PipesModule,
     CommonModule,
     FormsModule,
     IonicModule,

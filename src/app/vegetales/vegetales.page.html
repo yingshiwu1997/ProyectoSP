@@ -1,7 +1,7 @@
 <ion-content>
-  <img class="img1" src="assets/img/vegetal.jpg">
-
-      <ion-card *ngFor="let producto of productos; let i = index">
+    <img class="img1" src="assets/img/vegetal.jpg">
+    <ion-searchbar placeholder="Buscar" (ionChange) = "buscar($event)"></ion-searchbar>
+      <ion-card *ngFor="let producto of productos| filtro:textoBuscar ;  let i = index">
           <ion-card-content>
               <ion-grid>
                   <ion-row>
