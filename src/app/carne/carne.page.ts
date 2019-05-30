@@ -39,6 +39,7 @@ export class CarnePage implements OnInit {
           Nombre: data.Nombre,
           Precio: data.Precio,
           Categoria: data.Categoria,
+          Descripcion: data.Descripcion,
           cantidad: 0,
           added: false,
           icon: "cart"
@@ -97,6 +98,7 @@ export class CarnePage implements OnInit {
       }
       this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(producto.id).set({
         Categoria: producto.Categoria,
+        Descripcion: producto.Descripcion,
         Nombre: producto.Nombre,
         Precio: producto.Precio,
         img: producto.img,

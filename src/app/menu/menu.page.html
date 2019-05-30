@@ -5,7 +5,7 @@
     <ng-template #elseBlock>
         <div class="row row-center">
             <div class="col col-center">
-                    <h2>El carrito esta vacio</h2>
+                    <h2 class="vacio">El carrito esta vacio</h2>
             </div>
         </div>
     </ng-template>
@@ -23,7 +23,10 @@
                         <h2>{{producto.Nombre}}</h2>
                     </div>
                     <ion-row>
-                        <p>Q.{{producto.Precio}} libra</p>
+                        <p>Q.{{producto.Precio}}</p>
+                    </ion-row>
+                    <ion-row>
+                        <p>{{producto.Descripcion}}</p>
                     </ion-row>
                     <ion-row>
                         <ion-icon name="remove-circle-outline" (click)="decrement(i)"></ion-icon>

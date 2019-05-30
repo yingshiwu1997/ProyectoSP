@@ -13,7 +13,7 @@ export class HistorialPage implements OnInit {
   constructor(public afAuth : AngularFireAuth, public afStore : AngularFirestore) { }
 
   ngOnInit() {
-    var snapCompras = this.afStore.collection("Usuarios").doc(this.uid).collection("Compras").snapshotChanges();
+    var snapCompras = this.afStore.collection("Usuarios").doc(this.uid).collection("Compras", ref => ref.orderBy("Fecha", "desc")).snapshotChanges();
     snapCompras.forEach(snap => {
       this.compras = [];
       snap.forEach(compra => {

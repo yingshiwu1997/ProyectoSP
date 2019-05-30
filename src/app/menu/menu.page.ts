@@ -26,6 +26,7 @@ export class MenuPage implements OnInit {
           id: id,
           Nombre: data.Nombre,
           Categoria: data.Categoria,
+          Descripcion: data.Descripcion,
           Precio: data.Precio,
           img: data.img,
           cantidad: data.cantidad

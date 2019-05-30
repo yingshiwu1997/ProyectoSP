@@ -15,7 +15,10 @@
                               <h2>{{producto.Nombre}}</h2>
                           </div>
                           <ion-row>
-                              <p>Q.{{producto.Precio}} libra</p>
+                              <p>Q.{{producto.Precio}}</p>
+                          </ion-row>
+                          <ion-row>
+                              <p>{{producto.Descripcion}}</p>
                           </ion-row>
                           <ion-row>
                               <ion-icon name="remove-circle-outline" (click)="decrement(i)"></ion-icon>
