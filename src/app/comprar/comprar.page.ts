@@ -30,6 +30,7 @@ export class ComprarPage implements OnInit {
         this.productos.push({
           id: producto.payload.doc.id,
           prod:{
+            img: data.img,
             Cantidad: data.cantidad,
             Nombre: data.Nombre,
             Precio: data.Precio,
@@ -52,12 +53,15 @@ export class ComprarPage implements OnInit {
       NIT: this.user.nit, 
       Codigo: cod
     }).then(result => {
-      this.compra_actual = result.id; 
+      this.compra_actual = result.id;
+      var n = this.productos.length; 
       this.productos.forEach(producto => {
         this.afStore.collection("Usuarios").doc(this.uid).collection("Compras").doc(result.id).collection("Productos").doc(producto.id).set(producto.prod);
         this.afStore.collection("Usuarios").doc(this.uid).collection("Carrito").doc(producto.id).delete();
+        n -= 1;
+        console.log(n);
+        if(n == 0) this.navCtrl.navigateRoot('/tabs/historial');
       });
-      this.navCtrl.navigateRoot('/tabs/historial');
     })
     .catch(error => {
       console.log(error);

@@ -10,7 +10,7 @@
     </ng-template>
   
   <ion-card *ngFor="let compra of compras; let i = index">
-      <ion-grid>
+      <ion-grid >
         <ion-row>
           <p>{{compra.Fecha | date: short}}</p>
         </ion-row>
@@ -33,7 +33,9 @@
         </ion-row>
         <ion-row>
           <div class="ion-text-center">
-            <ion-icon name="arrow-down"></ion-icon>
+            <a [routerLink]="['/tabs/ver-compra', compra.id]" routerDirection="forward">
+              <ion-icon name="arrow-forward"></ion-icon>
+            </a>
           </div>
         </ion-row>
       </ion-grid>

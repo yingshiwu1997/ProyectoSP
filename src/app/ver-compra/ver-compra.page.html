@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>verCompra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="none">
+        <ion-item *ngFor="let producto of productos">
+            <ion-card>
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <div>
+                                    <img class="img2" src="{{producto.img}}">
+                                </div>
+                            </ion-col>
+                            <ion-col>
+                                <div>
+                                    <h2>{{producto.Nombre}}</h2>
+                                </div>
+                                <ion-row>
+                                    <p>Q.{{producto.Precio}} libra</p>
+                                </ion-row>
+                                <ion-row>
+                                    <p>{{producto.Descripcion}}</p>
+                                </ion-row>
+                                <ion-row>
+                                    <p>Cantidad: {{producto.cantidad}}</p>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row></ion-row>
+                    </ion-grid>
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+    </ion-list>
+    <button routerLink="/tabs/historial"><p>Regresar</p></button>
+ </ion-content>
+ 

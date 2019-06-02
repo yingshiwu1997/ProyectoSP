@@ -35,7 +35,7 @@ export class GraficasPage implements OnInit {
 
   private uid = this.afAuth.auth.currentUser.uid;
   private productos = {};
-  private max = 0;
+  private max = 2;
   public ready = 1;
   public categorias = {
     Carne:{},
@@ -97,6 +97,7 @@ export class GraficasPage implements OnInit {
               this.productos[producto.id] = {cantidad: 1, nombre: producto.data().Nombre};
               let i = this.categorias[producto.data().Categoria].barChartLabels.push(producto.data().Nombre);
               this.productos[producto.id]['index'] = i - 1;
+              this.categorias[producto.data().Categoria].barChartData[0].data[this.productos[producto.id].index] = 1;
             }
             else
             {

@@ -10,7 +10,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 export class HistorialPage implements OnInit {
   public compras = [];
   private uid = this.afAuth.auth.currentUser.uid;
-  constructor(public afAuth : AngularFireAuth, public afStore : AngularFirestore) { }
+  constructor( public afAuth : AngularFireAuth, public afStore : AngularFirestore) { }
 
   ngOnInit() {
     var snapCompras = this.afStore.collection("Usuarios").doc(this.uid).collection("Compras", ref => ref.orderBy("Fecha", "desc")).snapshotChanges();
@@ -19,6 +19,7 @@ export class HistorialPage implements OnInit {
       snap.forEach(compra => {
         var data = compra.payload.doc.data();
         this.compras.push({
+          id: compra.payload.doc.id,
           Fecha: data.Fecha.toDate(),
           Total: data.Total,
           Entregado: data.Entregado ? "Entregado": "Pendiente",

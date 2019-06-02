@@ -62,6 +62,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'ver-compra/:myid',
+        children: [
+          {
+            path: '',
+            loadChildren: '../ver-compra/ver-compra.module#VerCompraPageModule'
+          }
+        ]
+      },
+      {
         path: 'home',
         children: [
           {
